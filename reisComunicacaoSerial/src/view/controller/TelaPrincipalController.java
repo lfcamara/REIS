@@ -74,7 +74,7 @@ public class TelaPrincipalController extends Thread implements Initializable{
     void btnEnviarClick(ActionEvent event) {
     	if(Aplicacao.dados.isEmpty()){
     		Alert alert = new Alert(AlertType.WARNING);
-			alert.setContentText("Voc� deve clicar para capiturar os dados do dispositivo");
+			alert.setContentText("Você deve clicar para capturar os dados do dispositivo");
 			alert.setTitle("REIS");
 			alert.setHeaderText(null);
 			alert.showAndWait();

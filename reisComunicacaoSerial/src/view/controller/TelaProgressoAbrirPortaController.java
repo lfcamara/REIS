@@ -67,7 +67,7 @@ public class TelaProgressoAbrirPortaController implements Initializable {
 						}
 						else{
 							Alert alert = new Alert(AlertType.ERROR);
-							alert.setContentText("N�o foi poss�vel identificar o dispositivo");
+							alert.setContentText("Não foi possível identificar o dispositivo");
 							alert.setTitle("REIS");
 							alert.setHeaderText(null);
 							alert.showAndWait();
