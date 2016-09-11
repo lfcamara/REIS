@@ -1,0 +1,53 @@
+/* -- COR BACKGROUND -- */
+.reis-bg-cor-azulClaro { 
+	background-color: #3ABEC0; }
+	
+.reis-bg-cor-azulEscuro { 
+	background-color: #084d6e; }
+	
+.reis-bg-cor-preto { 
+	background-color:#000000; }
+	
+.reis-bg-cor-branco { 
+	background-color:#fff; }
+	
+.reis-bg-cor-verde {
+	background-color: #37BC9B;
+}
+.reis-bg-cor-azul{
+	background-color: #3498db;
+}
+.reis-bg-cor-laranja{
+	background-color: #f39c12;
+}
+
+/* -- COR TEXTO -- */
+.reis-cor-azulClaro { 
+	color: #3ABEC0; }
+	
+.reis-cor-azulEscuro { 
+	color: #084d6e; }
+	
+.reis-cor-preto { 
+	color:#000000; }
+	
+.reis-cor-branco { 
+	color:#fff; }
+
+.reis-cor-cinza { 
+	color:#95a5a6; }
+
+.reis-cor-cinzaClaro { 
+	color:#E6E6E6; }
+		
+.reis-verde-NUTES {
+	color:#55A79A; }
+	
+.reis-cor-verde {
+	color: #37BC9B; }
+
+.reis-cor-laranja {
+	color: #F6BB42; }
+
+.reis-cor-vermelho {
+	color: #DA4453; }

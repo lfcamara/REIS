@@ -1,0 +1,163 @@
+/* -- buttons -- */
+.btn-azul{
+	color: #fff;
+	background-color: #52AAD2;
+}
+
+.btn-azul:hover{
+	color: #52AAD2;
+}
+
+.btn-vermelho{
+	color: #fff;
+	background-color: #f06259;
+}
+
+.btn-vermelho:hover{
+	color: #f06259;
+}
+
+/* -- Outros -- */
+.mdl-layout-title{
+	margin: auto;
+}
+
+.negrito{
+	font-weight: bold;
+}
+
+.tamanho-14{
+	font-size: 14px;
+}
+
+body{
+	font-family: 'Roboto', sans-serif;
+	font-style: normal;
+}
+
+.fa{
+	font-size: 24px;
+}
+
+.form-control:focus{
+	border-color: #3ABEC0;
+}
+
+.centro {
+	position:absolute;
+	top:10%;
+	left:20%;
+	margin-top:-50px;
+	margin-left:-50px;
+}
+
+.margin{
+	margin-top: 12px;
+	color: #fff;
+}
+
+/* -- Dashboard -- */
+.linhaVerde {
+	background-color: #20B2AA;
+	display: block;
+  	height: 5px;
+  	border: 0;
+  	border-top: 1px solid #20B2AA;
+  	margin: 0;
+  	padding: 0;
+}
+
+.reis-linha {
+	display: block;
+  	height: 3px;
+  	border: 0;
+  	border-top: 1px solid #20B2AA;
+  	margin: 0;
+  	padding: 0;
+}
+
+.reis-hr {
+	background-color: #55A79A;
+	display: block;
+  	height: 1px;
+  	border: 0;
+  	border-top: 1px solid #55A79A;  	
+  	margin-top: 1px;
+  	margin-bottom: 5px;  	
+}
+	
+.panel--arredondado {
+	display: block;
+  	height: 4px;
+  	border: 0;  	
+  	margin: 0;
+  	padding: 0;
+  	-webkit-border-top-left-radius: 3px;
+	-webkit-border-top-right-radius: 3px;
+	-moz-border-radius-topleft: 3px;
+	-moz-border-radius-topright: 3px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
+
+.panel-minifooter {	
+	color:#A9A9A9;
+	border-color:#ddd;
+	border-bottom-color:#ddd;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 3px;
+	padding-top: 3px;	
+	border-top-color:#ddd;
+	border-top:1px solid #ddd;
+	border-bottom-color:#ddd;	
+	border-bottom-right-radius:3px;
+	border-bottom-left-radius:3px;
+}
+
+.reis-a {
+	color:#55A79A;
+}
+
+.reis-a:hover {
+	color:#3ABEC0;
+}
+
+.reis-img a {
+	color: #084d6e; 	
+}
+
+.reis-img img {
+	opacity: 1;
+}
+
+.reis-img img:hover {
+	opacity: 0.7;
+}
+
+/* -- TAMANHO - Tipografia*/
+.h3-small{
+	line-height:2.20;
+	font-size:1.45em;
+}
+
+.h3-smallMini{
+	line-height:2.20;
+	font-size:1.45em;
+}
+
+.h4-small{
+	line-height:1.90;
+	font-size:1.20em;	
+}
+
+.h6-small-mini{
+	line-height:1.50;
+	font-size:1.00em;	
+}
+
+textarea {
+  font-size: 20px;
+  line-height: 24px;
+  padding: 5px 5px;
+}
