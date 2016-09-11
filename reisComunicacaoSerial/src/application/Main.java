@@ -1,6 +1,6 @@
 /*
 The MIT License (MIT)
-Copyright (c) 2016 Núcleo de Tecnologias Estratégicas em Saúde (NUTES)
+Copyright (c) 2016 NÃºcleo de Tecnologias EstratÃ©gicas em SaÃºde (NUTES)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated 
 documentation files (the "Software"), to deal in the Software without restriction, including without limitation 
@@ -33,7 +33,7 @@ import javafx.stage.StageStyle;
 import javafx.stage.WindowEvent;
 
 /**
- * Classe principal da aplicação
+ * Classe principal da aplicaÃ§Ã£o
  */
 public class Main extends Application {
 

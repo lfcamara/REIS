@@ -65,7 +65,8 @@ public class LoginDAO {
 	
 	/**
 	 * Método para excluir o login do usuário
-	 * @param login Objeto de representação do login(LoginDomain) 
+	 * @param login Objeto de representação do login(LoginDomain)
+	 * @return Retorna true se conseguir ecluir o login e false caso contrário
 	 */
 	public boolean excluiLogin(LoginDomain login){		
 		

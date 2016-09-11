@@ -1,6 +1,6 @@
 /*
 The MIT License (MIT)
-Copyright (c) 2016 Núcleo de Tecnologias Estratégicas em Saúde (NUTES)
+Copyright (c) 2016 NÃºcleo de Tecnologias EstratÃ©gicas em SaÃºde (NUTES)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated 
 documentation files (the "Software"), to deal in the Software without restriction, including without limitation 
@@ -35,19 +35,19 @@ import javafx.scene.control.Alert.AlertType;
 import model.LoginDomain;
 
 /**
- * Classe para realizar a conexão com o servidor REIS
+ * Classe para realizar a conexÃ£o com o servidor REIS
  */
 public class ConexaoHTTP {
 	
 	/**
-	 * Método para enviar os dados para o sistema REIS.
-	 * @param login Nome de usuário cadastrado no REIS
-	 * @param senha Senha do usuário definida no REIS
-	 * @param hora Hora que a leitura dos dados foi feita no Oxímetro
-	 * @param porcentagem Valor da saturação que foi lida do Oxímetro
-	 * @param saturacao Taxa de pulso que foi lida do Oxímetro
+	 * MÃ©todo para enviar os dados para o sistema REIS.
+	 * @param login Nome de usuÃ¡rio cadastrado no REIS
+	 * @param senha Senha do usuÃ¡rio definida no REIS
+	 * @param hora Hora que a leitura dos dados foi feita no Oxï¿½metro
+	 * @param porcentagem Valor da saturaÃ§Ã£o que foi lida do Oxï¿½metro
+	 * @param saturacao Taxa de pulso que foi lida do Oxï¿½metro
 	 * @return Retorna true se conseguir enviar a leitura do dispositivo para o sistema REIS
-	 * e false caso contrário.
+	 * e false caso contrÃ¡rio.
 	 */
 	public boolean enviar(String login, String senha, String hora, String porcentagem, String saturacao){
 		
@@ -74,7 +74,7 @@ public class ConexaoHTTP {
 		} catch (IOException e) {
 
 			Alert alert = new Alert(AlertType.WARNING);
-			alert.setContentText("Falha ao enviar as informações. Não foi possível se conectar ao REIS!");
+			alert.setContentText("Falha ao enviar as informaï¿½ï¿½es. Nï¿½o foi possï¿½vel se conectar ao REIS!");
 			alert.setTitle("REIS");
 			alert.setHeaderText(null);
 			alert.showAndWait();
@@ -82,7 +82,7 @@ public class ConexaoHTTP {
 		}
 
 		Alert alert = new Alert(AlertType.WARNING);
-		alert.setContentText("O login ou a senha informado é inválido!");
+		alert.setContentText("O login ou a senha informado ï¿½ invï¿½lido!");
 		alert.setTitle("REIS");
 		alert.setHeaderText(null);
 		alert.showAndWait();

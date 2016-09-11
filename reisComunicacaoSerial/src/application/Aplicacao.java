@@ -1,6 +1,6 @@
 /*
 The MIT License (MIT)
-Copyright (c) 2016 Núcleo de Tecnologias Estratégicas em Saúde (NUTES)
+Copyright (c) 2016 NÃºcleo de Tecnologias EstratÃ©gicas em SaÃºde (NUTES)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated 
 documentation files (the "Software"), to deal in the Software without restriction, including without limitation 
@@ -19,34 +19,34 @@ DEALINGS IN THE SOFTWARE.
 package application;
 
 /**
- * Classe que armazena as informações que serão enviadas para a aplicação reis-web
+ * Classe que armazena as informaÃ§Ãµes que serÃ£o enviadas para a aplicaÃ§Ã£o reis-web
  */
 public class Aplicacao {
 
-	/** Representação do objeto PortaSerial */
+	/** RepresentaÃ§Ã£o do objeto PortaSerial */
 	public static PortaSerial portaSerial = new PortaSerial();
-	/** Informações obtidas do dispositivo */
+	/** InformaÃ§Ãµes obtidas do dispositivo */
 	public static String dados = "";
-	/** Armazena a ultima leitura realizada para que o usuário possa enviar os dado mais recentes */
+	/** Armazena a ultima leitura realizada para que o usuÃ¡rio possa enviar os dado mais recentes */
 	public static String ultimosDadosRecebidos = ""; 
-	/** Armazena todas as leituras  realizadas no oxímetro durante o momento de utilização */
+	/** Armazena todas as leituras  realizadas no oxï¿½metro durante o momento de utilizaÃ§Ã£o */
 	public static String historicoDeLeitura = ""; 
 
 	/** Login do paciente */
 	public static String login = "";
 	/** Senha do paciente */
 	public static String senha = "";
-	/** Horário atual da medição */
+	/** HorÃ¡rio atual da mediÃ§Ã£o */
 	public static String hora;
-	/** Informação referente a porcentagem de spO2  */
+	/** InformaÃ§Ã£o referente a porcentagem de spO2  */
 	public static String porcentagem;
-	/** Informação referente a taxa de pulso */
+	/** InformaÃ§Ã£o referente a taxa de pulso */
 	public static String saturacao;
 
 	public Aplicacao() { }
 
 	/**
-	 * Método que limpa o conteúdo das variáveis
+	 * MÃ©todo que limpa o conteÃºdo das variÃ¡veis
 	 */
 	public static void limparDados() {
 		dados = "";

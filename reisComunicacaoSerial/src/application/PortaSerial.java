@@ -1,6 +1,6 @@
 /*
 The MIT License (MIT)
-Copyright (c) 2016 N˙cleo de Tecnologias EstratÈgicas em Sa˙de (NUTES)
+Copyright (c) 2016 N√∫cleo de Tecnologias Estrat√©gicas em Sa√∫de (NUTES)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated 
 documentation files (the "Software"), to deal in the Software without restriction, including without limitation 
@@ -30,11 +30,11 @@ import javax.comm.SerialPortEvent;
 import javax.comm.SerialPortEventListener;
 
 public class PortaSerial implements SerialPortEventListener {
-	// DeclaraÁ„o de variaveis global
+	// Declara√ß√£o de variaveis globais
 	static CommPortIdentifier portId; // Classe para identificar a porta serial
 	static Enumeration portList; // Lista com todas as portas seriais
 	static OutputStream outputStream; // escreve
-	static InputStream inputStream; // lÍ
+	static InputStream inputStream; 
 	static SerialPort serialPort;
 	public static String lendoDados = "";
 	private boolean ehPortaSerial = false;
@@ -44,9 +44,9 @@ public class PortaSerial implements SerialPortEventListener {
 	}
 	@Override
 	/**
-	 * MÈtodo extendido da Classe SerialPortEvent Listener.
-	 * Ao ser chamado, este mÈtodo ir· carregar todas as informaÁıes do oxÌmetro atravÈs da porta serial
-	 * para uma vari·vel local.
+	 * M√©todo extendido da Classe SerialPortEvent Listener.
+	 * Ao ser chamado, este m√©todo ir√° carregar todas as informa√ß√µees do ox√≠metro atrav√©s da porta serial
+	 * para uma vari√°vel local.
 	 */
 	public void serialEvent(SerialPortEvent evento) {
 		switch (evento.getEventType()) {
@@ -60,9 +60,9 @@ public class PortaSerial implements SerialPortEventListener {
 		case SerialPortEvent.RI:
 		case SerialPortEvent.OUTPUT_BUFFER_EMPTY:
 			break;
-		case SerialPortEvent.DATA_AVAILABLE: //Quando dados estiverem disponÌveis para leitura
+		case SerialPortEvent.DATA_AVAILABLE: //Quando dados estiverem dispon√≠veis para leitura
 			  try {
-					byte[] bufferLeitura = new byte[30];//Buffer que ser· usado para armazenar os dados recebidos do oxÌmetro. 
+					byte[] bufferLeitura = new byte[30];//Buffer que ser√° usado para armazenar os dados recebidos do ox√≠metro. 
 					inputStream.read(bufferLeitura);
 					while (inputStream.available()>0) {
 						int n = inputStream.read(bufferLeitura);
@@ -81,7 +81,7 @@ public class PortaSerial implements SerialPortEventListener {
 	}
 	
 	/**
-	 * MÈtodo que fecha a conex„o da porta serial, e limpa as vari·veis.
+	 * M√©todo que fecha a conex√£o da porta serial, e limpa as vari√°veis.
 	 */	
 	public void fecharPorta(){
 		ehPortaSerial = false;
@@ -93,7 +93,8 @@ public class PortaSerial implements SerialPortEventListener {
 	}
 	
 	/**
- 	 * MÈtodo qe busca uma porta serial na qual o OxÌmetro esteja conectado.
+ 	 * M√©todo que busca uma porta serial na qual o Ox√≠metro esteja conectado.
+	 * @return Retorna true se conseguir identificar a porta serial e false caso contr√°rio 
 	 */
 	public boolean abrirPorta(){
 		try {
@@ -105,7 +106,7 @@ public class PortaSerial implements SerialPortEventListener {
 					break;
 				}
 			}
-			// DeclaraÁ„o genÈrica
+			// Declara√ß√£o gen√©rica
 		} catch (Exception ex1) {
 			return false;
 		}
@@ -115,7 +116,8 @@ public class PortaSerial implements SerialPortEventListener {
 	}
 	
 	/**
- 	 * MÈtodo que verifica se a transmiss„o de dados pela porta serial funciona.
+ 	 * M√©todo que verifica se a transmiss√£o de dados pela porta serial funciona.
+ 	 * @return Retorna true se a porta serial funcionar e false caso contr√°rio
 	 */
 	public boolean portaFunciona(){
 		try {

@@ -1,6 +1,6 @@
 /*
 The MIT License (MIT)
-Copyright (c) 2016 Núcleo de Tecnologias Estratégicas em Saúde (NUTES)
+Copyright (c) 2016 NÃºcleo de Tecnologias EstratÃ©gicas em SaÃºde (NUTES)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated 
 documentation files (the "Software"), to deal in the Software without restriction, including without limitation 
@@ -22,22 +22,22 @@ import java.io.Serializable;
 
 //Objeto que contÃ©m as informaÃ§Ãµes do arquivo de configuraÃ§Ã£o.
 /**
- * Classe de domínio que contém as informações do arquivo de login do paciente
+ * Classe de domÃ­nio que contÃ©m as informaÃ§Ãµes do arquivo de login do paciente
  */
 public class LoginDomain implements Serializable{
 	
-	/** Versão do atributo serialVersionUID */
+	/** VersÃ£o do atributo serialVersionUID */
 	private static final long serialVersionUID = 1L;
 	
 	/** Login do paciente */
 	private String login;
 	/** Senha do paciente*/
 	private String senha;
-	/** Link de envio das informações para o servidor REIS */
+	/** Link de envio das informaÃ§Ãµes para o servidor REIS */
 	private String link;
 	
 	/**
-	 * Método para obter o login do paciente
+	 * MÃ©todo para obter o login do paciente
 	 * @return String Login do paciente
 	 */
 	public String getLogin() {
@@ -45,7 +45,7 @@ public class LoginDomain implements Serializable{
 	}
 	
 	/**
-	 * Método para informar o login do paciente
+	 * MÃ©todo para informar o login do paciente
 	 * @param login  Login do paciente
 	 */
 	public void setLogin(String login) {
@@ -53,7 +53,7 @@ public class LoginDomain implements Serializable{
 	}
 	
 	/**
-	 * Método para obter a senha do paciente
+	 * MÃ©todo para obter a senha do paciente
 	 * @return String Senha do paciente
 	 */
 	public String getSenha() {
@@ -61,7 +61,7 @@ public class LoginDomain implements Serializable{
 	}
 	
 	/**
-	 * Método para informar a senha do paciente
+	 * MÃ©todo para informar a senha do paciente
 	 * @param senha Senha do paciente
 	 */
 	public void setSenha(String senha) {
@@ -69,16 +69,16 @@ public class LoginDomain implements Serializable{
 	}
 	
 	/**
-	 * Método para obter o link de envio das informações para o servidor REIS
-	 * @return String link de envio das informações para o servidor REIS
+	 * MÃ©todo para obter o link de envio das informaÃ§Ãµes para o servidor REIS
+	 * @return String link de envio das informaÃ§Ãµes para o servidor REIS
 	 */
 	public String getLink() {
 		return link;
 	}
 	
 	/**
-	 * Método para informar o link de envio das informações para o servidor REIS
-	 * @param link Link de envio das informações para o servidor REIS
+	 * MÃ©todo para informar o link de envio das informaÃ§Ãµes para o servidor REIS
+	 * @param link Link de envio das informaÃ§Ãµes para o servidor REIS
 	 */
 	public void setLink(String link) {
 		this.link = link;

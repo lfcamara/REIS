@@ -1,6 +1,6 @@
 /*
 The MIT License (MIT)
-Copyright (c) 2016 Núcleo de Tecnologias Estratégicas em Saúde (NUTES)
+Copyright (c) 2016 NÃºcleo de Tecnologias EstratÃ©gicas em SaÃºde (NUTES)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated 
 documentation files (the "Software"), to deal in the Software without restriction, including without limitation 
@@ -61,7 +61,7 @@ public class TelaConfiguracoesController implements Initializable{
     	SalvarLogin salvarLogin = new SalvarLogin();
     	salvarLogin.salvar(loginDomain);
     	Alert alert = new Alert(AlertType.INFORMATION);
-		alert.setContentText("Alterações realizadas com sucesso");
+		alert.setContentText("Alteraï¿½ï¿½es realizadas com sucesso");
 		alert.setTitle("REIS");
 		alert.setHeaderText(null);
 		alert.showAndWait();

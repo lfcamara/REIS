@@ -1,6 +1,6 @@
 /*
 The MIT License (MIT)
-Copyright (c) 2016 Núcleo de Tecnologias Estratégicas em Saúde (NUTES)
+Copyright (c) 2016 NÃºcleo de Tecnologias EstratÃ©gicas em SaÃºde (NUTES)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated 
 documentation files (the "Software"), to deal in the Software without restriction, including without limitation 
@@ -74,7 +74,7 @@ public class TelaPrincipalController extends Thread implements Initializable{
     void btnEnviarClick(ActionEvent event) {
     	if(Aplicacao.dados.isEmpty()){
     		Alert alert = new Alert(AlertType.WARNING);
-			alert.setContentText("Você deve clicar para capiturar os dados do dispositivo");
+			alert.setContentText("Vocï¿½ deve clicar para capiturar os dados do dispositivo");
 			alert.setTitle("REIS");
 			alert.setHeaderText(null);
 			alert.showAndWait();

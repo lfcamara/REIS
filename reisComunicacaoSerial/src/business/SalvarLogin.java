@@ -1,6 +1,6 @@
 /*
 The MIT License (MIT)
-Copyright (c) 2016 Núcleo de Tecnologias Estratégicas em Saúde (NUTES)
+Copyright (c) 2016 NÃºcleo de Tecnologias EstratÃ©gicas em SaÃºde (NUTES)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated 
 documentation files (the "Software"), to deal in the Software without restriction, including without limitation 
@@ -25,17 +25,17 @@ import java.io.ObjectOutputStream;
 
 //REIS para qual os dados serÃ£o enviados
 /**
- * Classe que salva os dados de configuração do reisComunicacaoSerial.
- * O login, a senha e a URL da página do REIS(web) para onde os dados serão enviados.
+ * Classe que salva os dados de configuraÃ§Ã£o do reisComunicacaoSerial.
+ * O login, a senha e a URL da pÃ¡gina do REIS(web) para onde os dados serÃ£o enviados.
  */
 public class SalvarLogin {
-	/** Caminho onde serão armazenadas(localmente) as informações do REIS para envio */
+	/** Caminho onde serÃ£o armazenadas(localmente) as informaÃ§Ãµes do REIS para envio */
 	String caminhoSave = "";
 	/** nome da pasta de backup*/
 	File pastaBackup;
 	
 	/**
-	 * Método para salvar as informações do login do paciente
+	 * MÃ©todo para salvar as informaÃ§Ãµes do login do paciente
 	 */
 	public SalvarLogin() {	
 		File file2 = new File(".");
@@ -53,9 +53,9 @@ public class SalvarLogin {
 	}
 	
 	/**
-	 * Método para salvar as informações do login do paciente
-	 * @param objeto Representação do objeto LoginDomain
-	 * @return String Caminho(local) onde a informação do login ficou salva
+	 * MÃ©todo para salvar as informaÃ§Ãµes do login do paciente
+	 * @param objeto RepresentaÃ§Ã£o do objeto LoginDomain
+	 * @return String Caminho(local) onde a informaÃ§Ã£o do login ficou salva
 	 */
 	public String salvar(Object objeto){
 		  try {

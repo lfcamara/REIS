@@ -1,6 +1,6 @@
 /*
 The MIT License (MIT)
-Copyright (c) 2016 Núcleo de Tecnologias Estratégicas em Saúde (NUTES)
+Copyright (c) 2016 NÃºcleo de Tecnologias EstratÃ©gicas em SaÃºde (NUTES)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated 
 documentation files (the "Software"), to deal in the Software without restriction, including without limitation 
@@ -26,16 +26,16 @@ import java.io.ObjectInputStream;
 import model.LoginDomain;
 
 /**
- * Classe que recupera os dados de configuração do reisComunicacaoSerial. 
- * O login, a senha e a URL da página do REIS(web) para onde os dados serão enviados.
+ * Classe que recupera os dados de configuraÃ§Ã£o do reisComunicacaoSerial. 
+ * O login, a senha e a URL da pÃ¡gina do REIS(web) para onde os dados serÃ£o enviados.
  */
 public class RecuperarLogin {
-	/** Caminho onde serão armazenadas(localmente) as informações do REIS para envio */
+	/** Caminho onde serÃ£o armazenadas(localmente) as informaÃ§Ãµes do REIS para envio */
 	String caminhoSave = "";
 	
 	/**
-	 * Método para obter o caminho onde serão armazenadas(localmente) as informações do REIS para envio 
-	 * @return LoginDomain - Representação do objeto LoginDomain
+	 * MÃ©todo para obter o caminho onde serÃ£o armazenadas(localmente) as informaÃ§Ãµes do REIS para envio 
+	 * @return LoginDomain - RepresentaÃ§Ã£o do objeto LoginDomain
 	 */
 	public LoginDomain getSave(){
 		File file2 = new File(".");
@@ -49,8 +49,8 @@ public class RecuperarLogin {
 	}
 
 	/**
-	 * Método para recuperar as informações do login do paciente
-	 * @param caminho Caminho onde estão armazenadas(localmente) as informações do REIS para envio
+	 * MÃ©todo para recuperar as informaÃ§Ã§Ãµes do login do paciente
+	 * @param caminho Caminho onde estÃ£o armazenadas(localmente) as informaÃ§Ãµes do REIS para envio
 	 * @return Object Objeto LoginDomain 
 	 */
 	private Object restaurar(String caminho) {
@@ -69,8 +69,8 @@ public class RecuperarLogin {
                e.printStackTrace();
         }
         
-		/* Caso nenhum arquivo de configuração exista, então será criado com a url do REIS. 
-           pode ser alterado pelo usuário em configurações */
+		/* Caso nenhum arquivo de configuraÃ§Ã£o exista, entÃ£o serÃ¡ criado com a url do REIS. 
+           pode ser alterado pelo usuÃ¡rio em configuraÃ§Ãµes */
         if(objeto==null){
         	LoginDomain loginDomain = new LoginDomain();
         	loginDomain.setLink("http://localhost:8080/reis/ReceberPortaSerial");
