@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.controller.TelaConfiguracoesController">
+<center>
+<VBox spacing="10.0">
+<children>
+<GridPane alignment="CENTER" gridLinesVisible="true" nodeOrientation="LEFT_TO_RIGHT">
+<columnConstraints>
+<ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" />
+</columnConstraints>
+<rowConstraints>
+<RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+</rowConstraints>
+<children><Label alignment="CENTER" layoutX="55.0" layoutY="23.0" prefHeight="59.0" prefWidth="491.0" style="-fx-font-family: Verdana; -fx-font-size: 16;" text="Configurações" wrapText="true" BorderPane.alignment="CENTER" />
+</children>
+<VBox.margin>
+<Insets />
+</VBox.margin>
+</GridPane><TitledPane animated="false" collapsible="false" layoutX="55.0" layoutY="97.0" prefHeight="168.0" prefWidth="514.0" style="-fx-font-family: Verdana; -fx-font-size: 14;" text="Sua identificaçao">
+<content>
+<AnchorPane>
+<children>
+<GridPane layoutX="65.0" layoutY="63.0" prefHeight="177.0" prefWidth="489.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+<children>
+<VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+<children>
+<Label text="Login:" />
+<TextField fx:id="txtLogin" />
+</children>
+</VBox>
+<VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+<children>
+<Label text="Senha:" />
+<PasswordField fx:id="txtSenha" />
+</children>
+</VBox>
+</children>
+<columnConstraints>
+<ColumnConstraints hgrow="SOMETIMES" />
+</columnConstraints>
+<rowConstraints>
+<RowConstraints vgrow="SOMETIMES" />
+<RowConstraints vgrow="SOMETIMES" />
+<RowConstraints vgrow="SOMETIMES" />
+</rowConstraints>
+</GridPane>
+</children>
+</AnchorPane>
+</content>
+</TitledPane>
+<TitledPane animated="false" collapsible="false" layoutX="10.0" layoutY="79.0" prefHeight="115.0" prefWidth="514.0" style="-fx-font-family: Verdana; -fx-font-size: 14;" text="Sistema para enviu dos dados">
+<content>
+<AnchorPane>
+<children>
+<GridPane layoutX="65.0" layoutY="63.0" prefHeight="177.0" prefWidth="489.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+<children>
+<VBox spacing="5.0">
+<children>
+<Label text="Link do site:" />
+<TextField fx:id="txtLink" />
+</children>
+</VBox>
+</children>
+<columnConstraints>
+<ColumnConstraints hgrow="SOMETIMES" />
+</columnConstraints>
+<rowConstraints>
+<RowConstraints vgrow="SOMETIMES" />
+</rowConstraints>
+</GridPane>
+</children>
+</AnchorPane>
+</content>
+</TitledPane><GridPane>
+<children>
+<Button fx:id="btnSalvar" layoutX="377.0" layoutY="312.0" mnemonicParsing="false" onAction="#btnSalvarClick" prefHeight="37.0" prefWidth="192.0" style="-fx-font-family: Verdana; -fx-font-size: 12;" text="Salvar" />
+<Button fx:id="btnCancelar" layoutX="55.0" layoutY="312.0" mnemonicParsing="false" onAction="#btnCancelarClick" prefHeight="37.0" prefWidth="192.0" style="-fx-font-family: Verdana; -fx-font-size: 12;" text="Cancelar" GridPane.columnIndex="1" />
+</children>
+<columnConstraints>
+<ColumnConstraints hgrow="SOMETIMES" />
+<ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" />
+</columnConstraints>
+<rowConstraints>
+<RowConstraints vgrow="SOMETIMES" />
+</rowConstraints>
+</GridPane>
+</children>
+<BorderPane.margin>
+<Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+</BorderPane.margin>
+</VBox>
+</center></BorderPane>

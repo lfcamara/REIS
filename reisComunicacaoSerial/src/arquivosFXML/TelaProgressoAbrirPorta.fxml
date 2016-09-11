@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane style="-fx-background-color: #B2DFEE;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.controller.TelaProgressoAbrirPortaController">
+<right>
+<VBox>
+<BorderPane.margin>
+<Insets right="10.0" />
+</BorderPane.margin>
+</VBox>
+</right>
+<bottom>
+<VBox alignment="CENTER">
+<children><Label style="-fx-font-size: 16;" text="Identificando dispositivo, aguarde..." /><ProgressBar fx:id="progressBar" prefHeight="25.0" prefWidth="240.0" progress="0.0" BorderPane.alignment="TOP_LEFT">
+<BorderPane.margin>
+<Insets bottom="10.0" left="15.0" />
+</BorderPane.margin></ProgressBar>
+</children>
+<padding>
+<Insets bottom="10.0" />
+</padding>
+<BorderPane.margin>
+<Insets left="10.0" right="10.0" />
+</BorderPane.margin>
+</VBox>
+</bottom>
+<center><ImageView fitHeight="218.0" fitWidth="304.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+<image>
+<Image url="@reis_logo.png" />
+</image>
+<BorderPane.margin>
+<Insets left="10.0" right="10.0" />
+</BorderPane.margin></ImageView>
+</center></BorderPane>

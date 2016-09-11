@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="250.0" prefWidth="514.0" style="-fx-background-color: #B2DFEE;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.controller.TelaInicioController">
+<center>
+<HBox alignment="CENTER">
+<children>
+				<ImageView fitHeight="227.0" fitWidth="235.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+					<image>
+						<Image url="@reis_logo.png" />
+					</image>
+				</ImageView>
+<AnchorPane prefHeight="318.0" prefWidth="306.0">
+<children>
+		<VBox alignment="CENTER" prefHeight="250.0" prefWidth="287.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" BorderPane.alignment="CENTER">
+			<BorderPane.margin>
+				<Insets right="55.0" />
+			</BorderPane.margin>
+<children><Label style="-fx-font-size: 25;" text="Seja bem-vindo ao Reis">
+<VBox.margin>
+<Insets />
+</VBox.margin>
+<padding>
+<Insets bottom="30.0" />
+</padding></Label><Button fx:id="btnInicio" mnemonicParsing="false" onAction="#btnInicioClick" prefHeight="39.0" prefWidth="160.0" style="-fx-font-size: 18;" text="Início" /><Button fx:id="btnConfiguracoes" mnemonicParsing="false" onAction="#btnConfiguracoesClick" prefHeight="39.0" prefWidth="160.0" style="-fx-font-size: 18;" text="Configurações" /><Button fx:id="btnSair" mnemonicParsing="false" onAction="#btnSairClick" prefHeight="39.0" prefWidth="160.0" style="-fx-font-size: 18;" text="Sair" />
+</children>
+		</VBox>
+</children>
+<HBox.margin>
+<Insets right="20.0" />
+</HBox.margin>
+</AnchorPane>
+</children>
+</HBox>
+</center>
+</BorderPane>
