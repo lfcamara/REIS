@@ -10,6 +10,7 @@
 	<name>reisProjectWeb-presentation</name>
 	<packaging>war</packaging>
 	<build>
+		<finalName>reis</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
