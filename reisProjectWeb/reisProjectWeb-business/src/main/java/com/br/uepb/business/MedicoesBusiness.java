@@ -45,8 +45,49 @@ public class MedicoesBusiness {
 	private MedicaoOximetroDAO medicaoOximetroDAO = new MedicaoOximetroDAO();
 	/** Representação do objeto MedicaoPressaoDAO */
 	private MedicaoPressaoDAO medicaoPressaoDAO = new MedicaoPressaoDAO();
+	/** Representação do objeto MedicaoMonitorDAO */
+	private MedicaoMonitorDAO medicaoMonitorDAO = new MedicaoMonitorDAO();
 	/** Representação do objeto LoginDomain */
 	private LoginDomain loginDomain;
+	
+	////////////////////////////////////CARDIOGRAFIA POR IMPEDANCIA///////////////////////////////////////////
+	/**
+	 * Método para obter a medicao do monitor da base de dados
+	 * @param idMonitor Id da Medicao
+	 * @return MedicaoMonitorDomain - Representação do objeto Monitor (MedicaoMonitorDomain) 
+	 */
+	public MedicaoMonitorDomain obtemMedicaoMonitor(int idMonitor) {
+		MedicaoMonitorDomain medicaoMonitorDomain =  medicaoMonitorDAO.obtemMedicaoMonitor(idMonitor);
+		return medicaoMonitorDomain;
+	}
+	
+	/**
+	 * Método para obter a medição do monitor. 
+	 * Se a leitura da medição ocorrer sem erros o método retorna true,
+	 * caso contrário será retornado false
+	 * @param pathXML Caminho do arquivo XML
+	 * @param login Login do usuário
+	 * @return boolean
+	 */
+	public Boolean medicaoMonitor(String pathXML, String login) {		
+		try {
+			DataList dataList = new DataList(pathXML);
+			Medicoes medicoes = new Medicoes(dataList);
+			//Método para gerar um ArrayList de Par;
+			ArrayList<Pair<String,String>> med = medicoes.getMedicoes();
+			
+			MedicaoMonitorDomain medicaoMonitorDomain =  medicoes.medicaoMonitor(med);
+			loginDomain = GerenciarSessaoBusiness.getSessaoBusiness(login).getLoginDomain();//SessaoBusiness.getLoginDomain();//loginDAO.obtemLogin(SessaoBusiness.getLoginDomain().getLogin(), SessaoBusiness.getLoginDomain().getSenha());			
+			PacienteDomain paciente = loginDomain.getPaciente();			
+			medicaoMonitorDomain.setPaciente(paciente);			
+			medicaoMonitorDAO.salvaMedicaoMonitor(medicaoMonitorDomain);
+			return true;	
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+	
 	
 	////////////////////////////////////OXIMETRO///////////////////////////////////////////
 	/**
