@@ -25,7 +25,8 @@
 		<mapping class="com.br.uepb.model.PacienteDomain" />
 		<mapping class="com.br.uepb.model.LoginDomain" />
 		<mapping class="com.br.uepb.model.MedicaoBalancaDomain" />
-		<mapping class="com.br.uepb.model.MedicaoOximetroDomain" /> 		
+		<mapping class="com.br.uepb.model.MedicaoOximetroDomain" /> 
+		<mapping class="com.br.uepb.model.MedicaoIcgDomain" />  
 		
 	</session-factory>
 </hibernate-configuration>
