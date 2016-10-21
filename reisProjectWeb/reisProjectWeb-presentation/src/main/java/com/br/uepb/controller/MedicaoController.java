@@ -37,6 +37,7 @@ import com.br.uepb.business.MedicoesBusiness;
 import com.br.uepb.business.SessaoBusiness;
 import com.br.uepb.model.LoginDomain;
 import com.br.uepb.model.MedicaoBalancaDomain;
+import com.br.uepb.model.MedicaoIcgDomain;
 import com.br.uepb.model.MedicaoOximetroDomain;
 import com.br.uepb.model.MedicaoPressaoDomain;
 import com.br.uepb.model.UploadItem;
@@ -66,6 +67,7 @@ public class MedicaoController {
 		modelAndView.addObject("oximetro", null);
 		modelAndView.addObject("balanca", null);
 		modelAndView.addObject("pressao", null);
+		modelAndView.addObject("icg", null);
 		modelAndView.addObject("tipoDispositivo", null);
 		
 		return modelAndView;
@@ -125,6 +127,7 @@ public class MedicaoController {
 						modelAndView.addObject("oximetro", oximetro);
 						modelAndView.addObject("balanca", null);
 						modelAndView.addObject("pressao", null);
+						modelAndView.addObject("icg", null);
 						
 					} else {
 						mensagem = "Erro ao cadastrar Oximetro arquivo XML!";
@@ -141,6 +144,7 @@ public class MedicaoController {
 						modelAndView.addObject("oximetro", null);
 						modelAndView.addObject("balanca", balanca);
 						modelAndView.addObject("pressao", null);
+						modelAndView.addObject("icg", null);
 					} else {
 						mensagem = "Erro ao cadastrar Balança arquivo XML!";
 						status = "1";						
@@ -156,14 +160,32 @@ public class MedicaoController {
 						modelAndView.addObject("oximetro", null);
 						modelAndView.addObject("balanca", null);
 						modelAndView.addObject("pressao", pressao);
+						modelAndView.addObject("icg", null);
 					} else {
 						mensagem = "Erro ao cadastrar Pressão arquivo XML!";
 						status = "1";
 					}
 
-				} else {
-					mensagem = "Erro ao cadastrar arquivo XML!";
-					status = "1";
+				} else if (tipo_dispositivo.equals("3")) { // icg
+					modelAndView.addObject("tipoDispositivo", 3);
+					if (medicoesBusiness.medicaoIcg(arquivo, login)) {
+						mensagem = "Medição ICG cadastrada com sucesso!";
+						status = "0";
+
+						MedicaoIcgDomain icg = medicoesBusiness.listaUltimaMedicaoIcg(loginDomain.getPaciente().getId());						
+						modelAndView.addObject("oximetro", null);
+						modelAndView.addObject("balanca", null);
+						modelAndView.addObject("pressao", null);
+						modelAndView.addObject("icg", icg);
+						
+					} else {
+						mensagem = "Erro ao cadastrar ICG arquivo XML!";
+						status = "1";
+					}
+				}
+					else {
+						mensagem = "Erro ao cadastrar arquivo XML!";
+						status = "1";
 				}
 
 			} catch (Exception e) {
@@ -181,6 +203,7 @@ public class MedicaoController {
 			modelAndView.addObject("oximetro", null);
 			modelAndView.addObject("balanca", null);
 			modelAndView.addObject("pressao", null);
+			modelAndView.addObject("icg", null);
 		}
 		
 		model.addAttribute("mensagem", mensagem);
