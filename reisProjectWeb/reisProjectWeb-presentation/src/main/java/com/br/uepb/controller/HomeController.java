@@ -1,4 +1,5 @@
 /*
+
 The MIT License (MIT)
 Copyright (c) 2016 Núcleo de Tecnologias Estratégicas em Saúde (NUTES)
 
@@ -33,6 +34,7 @@ import com.br.uepb.model.LoginDomain;
 import com.br.uepb.model.MedicaoBalancaDomain;
 import com.br.uepb.model.MedicaoOximetroDomain;
 import com.br.uepb.model.MedicaoPressaoDomain;
+import com.br.uepb.model.MedicaoIcgDomain;
 
 @Controller
 public class HomeController {
@@ -55,15 +57,17 @@ public class HomeController {
 		MedicaoOximetroDomain oximetro = medicoesBusiness.listaUltimaMedicaoOximetro(loginDomain.getPaciente().getId());
 		MedicaoBalancaDomain balanca = medicoesBusiness.listaUltimaMedicaoBalanca(loginDomain.getPaciente().getId());
 		MedicaoPressaoDomain pressao = medicoesBusiness.listaUltimaMedicaoPressao(loginDomain.getPaciente().getId());
+		MedicaoIcgDomain icg = medicoesBusiness.listaUltimaMedicaoIcg(loginDomain.getPaciente().getId());;
 		
 		boolean verificaMedicao = false;
-		if ((oximetro != null) || (balanca != null) || (pressao != null)) {
+		if ((oximetro != null) || (balanca != null) || (pressao != null) || (icg != null)) {
 			verificaMedicao= true;
 		}
 		
 		modelAndView.setViewName("home/home");
 		modelAndView.addObject("usuario", loginDomain.getPaciente().getNome());
 		modelAndView.addObject("paciente", loginDomain.getPaciente());
+		modelAndView.addObject("icg", icg);
 		modelAndView.addObject("oximetro", oximetro);
 		modelAndView.addObject("balanca", balanca);
 		modelAndView.addObject("pressao", pressao);
@@ -71,8 +75,4 @@ public class HomeController {
 		
 		return modelAndView;
 	}
-	
-	
-	
-
 }
