@@ -35,6 +35,7 @@ public class HistoricoDomain {
 	private MedicaoOximetroDomain oximetro;
 	/** Objeto referente aos dados de medição do medidor de pressão arterial */
 	private MedicaoPressaoDomain pressao;
+	private MedicaoIcgDomain icg;
 
 	/**
 	 * Método construtor da classe HistoricoDomain
@@ -46,12 +47,13 @@ public class HistoricoDomain {
 	 * @param pressao Objeto referente a medição do medidor de pressão arterial
 	 */
 	public HistoricoDomain(int id, String data, String hora, MedicaoBalancaDomain balanca,
-			MedicaoOximetroDomain oximetro, MedicaoPressaoDomain pressao) {		
+			MedicaoOximetroDomain oximetro, MedicaoPressaoDomain pressao, MedicaoIcgDomain icg) {		
 		this.id = id;
 		this.data = data;
 		this.balanca = balanca;
 		this.oximetro = oximetro;
 		this.pressao = pressao;
+		this.icg = icg;
 	}
 
 	/**
@@ -140,6 +142,22 @@ public class HistoricoDomain {
 	 */
 	public void setPressao(MedicaoPressaoDomain pressao) {
 		this.pressao = pressao;
+	}
+	
+	/**
+	 * Método para retornar o objeto referente aos dados de medição do medidor de pressão arterial
+	 * @return MedicaoPressaoDomain
+	 */
+	public MedicaoIcgDomain getIcg() {
+		return icg;
+	}
+
+	/**
+	 * Método para informar o objeto referente aos dados de medição do medidor de pressão arterial
+	 * @param pressao Objeto referente a medição do medidor de pressão arterial
+	 */
+	public void setIcg(MedicaoIcgDomain icg) {
+		this.icg = icg;
 	}
 
 }
