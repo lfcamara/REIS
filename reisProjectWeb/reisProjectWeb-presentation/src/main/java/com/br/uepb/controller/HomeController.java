@@ -16,63 +16,148 @@ THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABI
 CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
 DEALINGS IN THE SOFTWARE. 
 */
-package com.br.uepb.controller;
+package com.br.uepb.model;
 
-import javax.servlet.http.HttpServletRequest;
+/**
+ * Classe de domínio que define o histórico de medições do paciente 
+ */
+public class HistoricoDomain {
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
+	/** Id do histórico */
+	private int id;
+	/** Data da medição */	
+	private String data;
+	/** Horário da medição */
+	private String hora;
+	/** Objeto referente aos dados de medição da balança */
+	private MedicaoBalancaDomain balanca;
+	/** Objeto referente aos dados de medição do oxímetro */
+	private MedicaoOximetroDomain oximetro;
+	/** Objeto referente aos dados de medição do medidor de pressão arterial */
+	private MedicaoPressaoDomain pressao;
+	private MedicaoIcgDomain icg;
 
-import com.br.uepb.business.GerenciarSessaoBusiness;
-import com.br.uepb.business.LoginBusiness;
-import com.br.uepb.business.MedicoesBusiness;
-import com.br.uepb.business.SessaoBusiness;
-import com.br.uepb.model.LoginDomain;
-import com.br.uepb.model.MedicaoBalancaDomain;
-import com.br.uepb.model.MedicaoOximetroDomain;
-import com.br.uepb.model.MedicaoPressaoDomain;
+	/**
+	 * Método construtor da classe HistoricoDomain
+	 * @param id Id do Histórico
+	 * @param data Data da medição
+	 * @param hora Hora da medição
+	 * @param balanca Objeto referente a medição da balança
+	 * @param oximetro Objeto referente a medição do oxímetro
+	 * @param pressao Objeto referente a medição do medidor de pressão arterial
+	 */
+	public HistoricoDomain(int id, String data, String hora, MedicaoBalancaDomain balanca,
+			MedicaoOximetroDomain oximetro, MedicaoPressaoDomain pressao, MedicaoIcgDomain icg) {		
+		this.id = id;
+		this.data = data;
+		this.balanca = balanca;
+		this.oximetro = oximetro;
+		this.pressao = pressao;
+		this.icg = icg;
+	}
 
-@Controller
-public class HomeController {
-	
-	@RequestMapping(value = "/home/home.html", method = RequestMethod.GET)
-	public ModelAndView homeGet(HttpServletRequest request) {
+	/**
+	 * Método para retornar o id do histórico
+	 * @return int
+	 */
+	public int getId() {
+		return id;
+	}
 
-		ModelAndView modelAndView = new ModelAndView();
-		String login = request.getSession().getAttribute("login").toString();
-		SessaoBusiness sessao = GerenciarSessaoBusiness.getSessaoBusiness(login);
-		if(sessao == null){
-			modelAndView.setViewName("redirect:/index/login.html");
-			return modelAndView;
-		}
-		MedicoesBusiness medicoesBusiness = new MedicoesBusiness();
-		LoginBusiness loginBusiness = new LoginBusiness();
-		LoginDomain loginDomain = sessao.getLoginDomain();
-		loginDomain.setPaciente(loginBusiness.getPaciente(loginDomain.getLogin(), loginDomain.getSenha()));
-		
-		MedicaoOximetroDomain oximetro = medicoesBusiness.listaUltimaMedicaoOximetro(loginDomain.getPaciente().getId());
-		MedicaoBalancaDomain balanca = medicoesBusiness.listaUltimaMedicaoBalanca(loginDomain.getPaciente().getId());
-		MedicaoPressaoDomain pressao = medicoesBusiness.listaUltimaMedicaoPressao(loginDomain.getPaciente().getId());
-		
-		boolean verificaMedicao = false;
-		if ((oximetro != null) || (balanca != null) || (pressao != null)) {
-			verificaMedicao= true;
-		}
-		
-		modelAndView.setViewName("home/home");
-		modelAndView.addObject("usuario", loginDomain.getPaciente().getNome());
-		modelAndView.addObject("paciente", loginDomain.getPaciente());
-		modelAndView.addObject("oximetro", oximetro);
-		modelAndView.addObject("balanca", balanca);
-		modelAndView.addObject("pressao", pressao);
-		modelAndView.addObject("verificaMedicao", verificaMedicao);
-		
-		return modelAndView;
+	/**
+	 * Método para retornar a data da medição
+	 * @return String
+	 */
+	public String getData() {
+		return data;
+	}
+
+	/**
+	 * Método para informar a data da medição
+	 * @param data Data da medição
+	 */
+	public void setData(String data) {
+		this.data = data;
+	}
+
+	/**
+	 * Método para retornar o horário da medição
+	 * @return String
+	 */
+	public String getHora() {
+		return hora;
+	}
+
+	/**
+	 * Método para informar o horário da medição
+	 * @param hora Hora da medição
+	 */
+	public void setHora(String hora) {
+		this.hora = hora;
+	}
+
+	/**
+	 * Método para retornar o objeto referente aos dados de medição da balança
+	 * @return MedicaoBalancaDomain
+	 */
+	public MedicaoBalancaDomain getBalanca() {
+		return balanca;
+	}
+
+	/**
+	 * Método para informar o objeto referente aos dados de medição da balança
+	 * @param balanca Objeto referente a medição da balança
+	 */
+	public void setBalanca(MedicaoBalancaDomain balanca) {
+		this.balanca = balanca;
+	}
+
+	/**
+	 * Método para retornar o objeto referente aos dados de medição do oxímetro
+	 * @return MedicaoOximetroDomain
+	 */
+	public MedicaoOximetroDomain getOximetro() {
+		return oximetro;
+	}
+
+	/**
+	 * Método para informar o objeto referente aos dados de medição do oxímetro
+	 * @param oximetro Objeto referente a medição do oxímetro
+	 */
+	public void setOximetro(MedicaoOximetroDomain oximetro) {
+		this.oximetro = oximetro;
+	}
+
+	/**
+	 * Método para retornar o objeto referente aos dados de medição do medidor de pressão arterial
+	 * @return MedicaoPressaoDomain
+	 */
+	public MedicaoPressaoDomain getPressao() {
+		return pressao;
+	}
+
+	/**
+	 * Método para informar o objeto referente aos dados de medição do medidor de pressão arterial
+	 * @param pressao Objeto referente a medição do medidor de pressão arterial
+	 */
+	public void setPressao(MedicaoPressaoDomain pressao) {
+		this.pressao = pressao;
 	}
 	
-	
-	
+	/**
+	 * Método para retornar o objeto referente aos dados de medição do medidor de pressão arterial
+	 * @return MedicaoPressaoDomain
+	 */
+	public MedicaoIcgDomain getIcg() {
+		return icg;
+	}
+
+	/**
+	 * Método para informar o objeto referente aos dados de medição do medidor de pressão arterial
+	 * @param pressao Objeto referente a medição do medidor de pressão arterial
+	 */
+	public void setIcg(MedicaoIcgDomain icg) {
+		this.icg = icg;
+	}
 
 }
