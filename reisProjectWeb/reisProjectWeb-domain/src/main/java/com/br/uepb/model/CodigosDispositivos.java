@@ -55,7 +55,12 @@ public class CodigosDispositivos {
 		TAXA_PULSO_MED("Taxa de Pulso", "18474", "78564009", "Pulse rate", "50-100"),		
 		PESO_BAL("Peso", "57664", "27113001", "Body Weight", ""),
 		ALTURA_BAL("Altura", "57668", "50373000", "Body Height", ""),
-		IMC_BAL("IMC", "57680", "60621009", "Body mass index", "");
+		IMC_BAL("IMC", "57680", "60621009", "Body mass index", ""),
+		CI_ICG("Indice Cardiaco", "18700", "", "Cardiac Index", "2-4.5"),
+		CO_ICG("Debito Cardiaco", "19204", "", "Cardiac Output", "4-8"),
+		FREQ_CARD_ICG("Frequencia Cardiaca", "16770", "", "Heart Rate", "60-100"),
+		FREQ_RESP_ICG("Frequencia Respiratoria", "20490", "", "Respiration Rate", "25-35");
+		
 		
 		/** Nome do sinal vital */
         private String nome;
