@@ -22,10 +22,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.br.uepb.dao.MedicaoBalancaDAO;
+import com.br.uepb.dao.MedicaoIcgDAO;
 import com.br.uepb.dao.MedicaoOximetroDAO;
 import com.br.uepb.dao.MedicaoPressaoDAO;
 import com.br.uepb.model.LoginDomain;
 import com.br.uepb.model.MedicaoBalancaDomain;
+import com.br.uepb.model.MedicaoIcgDomain;
 import com.br.uepb.model.MedicaoOximetroDomain;
 import com.br.uepb.model.MedicaoPressaoDomain;
 import com.br.uepb.model.PacienteDomain;
@@ -45,8 +47,66 @@ public class MedicoesBusiness {
 	private MedicaoOximetroDAO medicaoOximetroDAO = new MedicaoOximetroDAO();
 	/** Representação do objeto MedicaoPressaoDAO */
 	private MedicaoPressaoDAO medicaoPressaoDAO = new MedicaoPressaoDAO();
+	/** Representação do objeto MedicaoMonitorDAO */
+	private MedicaoIcgDAO medicaoIcgDAO = new MedicaoIcgDAO();
 	/** Representação do objeto LoginDomain */
 	private LoginDomain loginDomain;
+	
+	////////////////////////////////////ICG///////////////////////////////////////////
+	/**
+	 * Método para obter a medicao do monitor da base de dados
+	 * @param idIcg Id da Medicao
+	 * @return MedicaoIcgDomain - Representação do objeto Monitor (MedicaoMonitorDomain) 
+	 */
+	public MedicaoIcgDomain obtemMedicaoIcg(int idIcg) {
+		MedicaoIcgDomain medicaoIcgDomain =  medicaoIcgDAO.obtemMedicaoIcg(idIcg);
+		return medicaoIcgDomain;
+	}
+	
+	/**
+	 * Método para obter a medição do icg. 
+	 * Se a leitura da medição ocorrer sem erros o método retorna true,
+	 * caso contrário será retornado false
+	 * @param pathXML Caminho do arquivo XML
+	 * @param login Login do usuário
+	 * @return boolean
+	 */
+	public Boolean medicaoIcg(String pathXML, String login) {		
+		try {
+			DataList dataList = new DataList(pathXML);
+			Medicoes medicoes = new Medicoes(dataList);
+			//Método para gerar um ArrayList de Par;
+			ArrayList<Pair<String,String>> med = medicoes.getMedicoes();
+			
+			MedicaoIcgDomain medicaoIcgDomain =  medicoes.medicaoIcg(med);
+			loginDomain = GerenciarSessaoBusiness.getSessaoBusiness(login).getLoginDomain();//SessaoBusiness.getLoginDomain();//loginDAO.obtemLogin(SessaoBusiness.getLoginDomain().getLogin(), SessaoBusiness.getLoginDomain().getSenha());			
+			PacienteDomain paciente = loginDomain.getPaciente();			
+			medicaoIcgDomain.setPaciente(paciente);			
+			medicaoIcgDAO.salvaMedicaoIcg(medicaoIcgDomain);
+			return true;	
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+	
+	/**
+	 * Método para obter a lista de todas as medições do oxímetro de um paciente 
+	 * @param idPaciente Id do paciente
+	 * @return List
+	 */
+	public List<MedicaoIcgDomain> listaMedicoesIcgPaciente(int idPaciente){
+		return  medicaoIcgDAO.listaMedicoesDoPaciente(idPaciente);
+	}
+	
+	/**
+	 * Método para obter a ultima medição do oxímetro
+	 * @param idPaciente Id do paciente
+	 * @return MedicaoOximetroDomain
+	 */
+	public MedicaoIcgDomain listaUltimaMedicaoIcg(int idPaciente){
+		return medicaoIcgDAO.obtemUltimaMedicao(idPaciente);
+	}
 	
 	////////////////////////////////////OXIMETRO///////////////////////////////////////////
 	/**
