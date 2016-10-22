@@ -26,6 +26,7 @@ import org.hibernate.Transaction;
 
 import com.br.uepb.model.LoginDomain;
 import com.br.uepb.model.MedicaoBalancaDomain;
+import com.br.uepb.model.MedicaoIcgDomain;
 import com.br.uepb.model.MedicaoOximetroDomain;
 import com.br.uepb.model.MedicaoPressaoDomain;
 import com.br.uepb.model.PacienteDomain;
@@ -73,6 +74,7 @@ public class PacienteDAO {
 		MedicaoOximetroDAO medicaoOxDAO = new MedicaoOximetroDAO();
 		MedicaoPressaoDAO medicaoPres = new MedicaoPressaoDAO();
 		MedicaoBalancaDAO medicaoB = new MedicaoBalancaDAO();
+		MedicaoIcgDAO medicaoI = new MedicaoIcgDAO();
 		LoginDomain login = loginDAO.obtemLoginPorPaciente(paciente.getId());		
 		
 		if(login != null){
@@ -88,6 +90,9 @@ public class PacienteDAO {
 			novaSessao.delete(medicao);
 		}
 		for(MedicaoBalancaDomain medicao : medicaoB.listaMedicoesDoPaciente(paciente.getId())){
+			novaSessao.delete(medicao);
+		}
+		for(MedicaoIcgDomain medicao : medicaoI.listaMedicoesDoPaciente(paciente.getId())){
 			novaSessao.delete(medicao);
 		}
 		novaSessao.delete(paciente);
