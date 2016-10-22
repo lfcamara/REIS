@@ -32,6 +32,7 @@ import com.br.uepb.business.MedicoesBusiness;
 import com.br.uepb.business.SessaoBusiness;
 import com.br.uepb.model.HistoricoDomain;
 import com.br.uepb.model.MedicaoBalancaDomain;
+import com.br.uepb.model.MedicaoIcgDomain;
 import com.br.uepb.model.MedicaoOximetroDomain;
 import com.br.uepb.model.MedicaoPressaoDomain;
 
@@ -56,12 +57,14 @@ public class HistoricoController {
 		List<MedicaoOximetroDomain> historicoOximetro = medicoesBusiness.listaMedicoesOximetroPaciente(sessao.getLoginDomain().getPaciente().getId());
 		List<MedicaoBalancaDomain> historicoBalanca = medicoesBusiness.listaMedicoesBalancaPaciente(sessao.getLoginDomain().getPaciente().getId());
 		List<MedicaoPressaoDomain> historicoPressao = medicoesBusiness.listaMedicoesPressaoPaciente(sessao.getLoginDomain().getPaciente().getId());
+		List<MedicaoIcgDomain> historicoIcg = medicoesBusiness.listaMedicoesIcgPaciente(sessao.getLoginDomain().getPaciente().getId());
 		
 		modelAndView.setViewName("home/historico");
 		modelAndView.addObject("usuario", sessao.getLoginDomain().getPaciente().getNome());
 		modelAndView.addObject("historicoOximetro", historicoOximetro);
 		modelAndView.addObject("historicoBalanca", historicoBalanca);
 		modelAndView.addObject("historicoPressao", historicoPressao);
+		modelAndView.addObject("historicoICG", historicoIcg);
 		modelAndView.addObject("status", null);
 		modelAndView.addObject("mensagemErro", null);
 		
